@@ -1,0 +1,20 @@
+{
+    "name": "jglcrm-2015",
+    "version": "0.0.0",
+    "authors": [
+	"Mark Wolf <mark.wolf.music@gmail.com>"
+    ],
+    "description": "Jekyll site for the 2015 regional meeting",
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+	"**/.*",
+	"node_modules",
+	"bower_components",
+	"test",
+	"tests"
+    ],
+    "dependencies": {
+	"bootstrap": ">=3.1.1"
+    }
+}
