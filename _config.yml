@@ -1,3 +1,5 @@
 name: 2015 Joint Great-Lakes/Central Regional Meeting
 markdown: redcarpet
 pygments: true
+
+debug: true
