@@ -17,8 +17,39 @@ body > .container {
     li.active {
     }
 }
-.header h2 {
-    font-size: 185%;
+.header {
+    .title-row {
+	.make-row();
+	margin-top: 5px;
+	.text-center;
+	a {
+	    text-decoration: none;
+	    color: @text-color;
+	}
+    }
+    .second-row {
+	.make-row();
+	margin-top: 10px;
+	> div {
+	    .make-sm-column(4);
+	}
+	h2 {
+	    margin-top: 0px;
+	    font-size: 185%;
+	}
+    }
+    .logo {
+	.make-md-column(1);
+	img { .img-responsive(); }
+    }
+    .sponsor-logo {
+	.text-center;
+    }
+    .title {
+	.make-md-column(10);
+	.text-center;
+    }
+    h2 { font-size: 185%; }
 }
 
 .content {
