@@ -39,14 +39,18 @@ body > .container {
 	}
     }
     .logo {
-	.make-md-column(1);
+	vertical-align: middle;
+	.make-md-column(2);
 	img { .img-responsive(); }
+    }
+    .acs-logo {
+	margin-top: 39px;
     }
     .sponsor-logo {
 	.text-center;
     }
     .title {
-	.make-md-column(10);
+	.make-md-column(8);
 	.text-center;
     }
     h2 { font-size: 185%; }
@@ -70,5 +74,24 @@ body > .container {
 	.img-rounded;
 	margin-top: 10px;
 	margin-bottom: 10px;
+    }
+}
+
+.awards .award-section{
+    .nominate-button {
+	.btn;
+	.btn-primary;
+    }
+    .award-block {
+	.make-sm-column(6);
+    }
+    h2 {
+	background-color: @state-info-bg;
+	padding: 5px;
+	border-radius: 5px;
+    }
+    .more-button {
+	.btn;
+	.btn-link;
     }
 }
