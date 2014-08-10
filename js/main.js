@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Setup awards progressive reveal
-    $('.award-section').find('.award-block,.nominate-button').hide();
+    $('.award-section .award-block').hide();
     $('.award-section').append('<div class="more-button">More info</div>');
     $('.award-section .more-button').on('click', function(e) {
 	$(e.target).slideUp();
