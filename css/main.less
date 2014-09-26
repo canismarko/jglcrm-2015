@@ -13,14 +13,20 @@ body > .container {
 }
 
 .header,.nav-tabs {
-    background-color: rgba(255, 255, 255, 0.70);
+    background-color: rgba(255, 255, 255, 0.80);
     li.active {
     }
+}
+.container {
+    background-image: url('/images/hemoglobin-bg.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-origin: content-box;
 }
 .header {
     .title-row {
 	.make-row();
-	margin-top: 5px;
+	padding-top: 10px;
 	.text-center;
 	a {
 	    text-decoration: none;
@@ -102,5 +108,18 @@ body > .container {
     }
     dd {
 	margin-left: 25px;
+    }
+}
+
+/* Countdown timer to the start of the conference */
+.countdown-timer {
+    .make-row();
+    .panel;
+    .panel-success;
+    .panel-body {
+	.text-center;
+    }
+    .months,.days,.hours,.minutes,.seconds {
+	font-size: 48px;
     }
 }
