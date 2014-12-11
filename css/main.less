@@ -36,9 +36,6 @@ body > .container {
     .second-row {
 	.make-row();
 	margin-top: 10px;
-	> div {
-	    .make-sm-column(4);
-	}
 	h2 {
 	    margin-top: 0px;
 	    font-size: 185%;
@@ -53,7 +50,13 @@ body > .container {
 	margin-top: 39px;
     }
     .sponsor-logo {
+	.make-sm-column(2);
+	.make-sm-column-offset(1);
 	.text-center;
+	img {
+	    max-width: 50px;
+	    .img-responsive();
+	}
     }
     .title {
 	.make-md-column(8);
