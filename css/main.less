@@ -24,6 +24,15 @@ body > .container {
     background-origin: content-box;
 }
 .header {
+    @media (max-width: @screen-lg-min)
+    {
+	.text-center;
+	h2 {.text-center}; /* Override a .text-right */
+	img {
+	    .center-block;
+	    .img-responsive();
+	}
+    }
     .title-row {
 	.make-row();
 	padding-top: 10px;
@@ -41,17 +50,18 @@ body > .container {
 	    font-size: 185%;
 	}
     }
+    img { .img-responsive(); }
     .logo {
 	vertical-align: middle;
 	.make-md-column(2);
-	img { .img-responsive(); }
     }
     .acs-logo {
+	img { .img-responsive(); }
 	margin-top: 39px;
     }
     .sponsor-logo {
-	.make-sm-column(2);
-	.make-sm-column-offset(1);
+	.make-md-column(2);
+	.make-md-column-offset(1);
 	.text-center;
 	img {
 	    max-width: 50px;
@@ -112,6 +122,10 @@ body > .container {
     dd {
 	margin-left: 25px;
     }
+}
+
+.closed-deadline {
+    text-decoration: line-through;
 }
 
 /* Countdown timer to the start of the conference */
