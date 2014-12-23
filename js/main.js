@@ -72,3 +72,29 @@ $(document).ready(function() {
 	window.setInterval(updateTimer, 1000);
     });
 });
+
+// Select a random sponsor and present their logo
+$(document).ready(function() {
+    $('.rotating-sponsors').each(function(idx, elem) {
+	var $elem, sponsors, sponsor, max;
+	$elem = $(elem);
+	sponsors = [
+	    {
+		href: 'http://eng-sci.udmercy.edu/programs/sci/chemistry/',
+		src: '/images/ud-mercy-logo.png'
+	    },
+	    {
+		href: 'http://chem.wayne.edu/',
+		src: '/images/wayne-state-logo.png'
+	    }
+	];
+	// Remove non-javascript indicators
+	$elem.find('span').hide();
+	// Pick a random sponsor and set details
+	max = sponsors.length;
+	idx = Math.floor(Math.random() * max);
+	sponsor = sponsors[idx];
+	$elem.attr('href', sponsor.href);
+	$elem.find('img').attr('src', sponsor.src);
+    });
+});
