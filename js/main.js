@@ -98,3 +98,19 @@ $(document).ready(function() {
 	$elem.find('img').attr('src', sponsor.src);
     });
 });
+
+
+// Pop-up with instructions for submitting abstracts
+$(document).ready(function(e) {
+    $('.abstract-guidelines').on('click', function(linkEvent) {
+	var $btn, $modal, url;
+	url = $(linkEvent.target).attr('href');
+	$modal = $('#abstract-guidelines');
+	$modal.modal();
+	// $btn = $modal.find('#abstract-submit')
+	// $btn.on('click', function() {
+	//     // window.location.href = url;
+	// });
+	linkEvent.preventDefault();
+    });
+});

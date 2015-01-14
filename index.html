@@ -40,6 +40,11 @@ layout: default
       </div>
     </div>
 
+    <h1>Abstract Submission Opens</h1>
+    <a href="https://cerm-glrm2015.abstractcentral.com/"
+	    class="abstract-guidelines btn btn-primary" target="_blank">
+      Submit an Abstract</a></td>
+
     <h1>Get Involved</h1>
 
     <div class="panel panel-info">
@@ -91,13 +96,17 @@ layout: default
 	<td>Organize Symposium</td>
 	<td>Saturday 15 November 2014</td>
       </tr>
-      <tr>
-	<td>Begin Registration</td>
-	<td>Thursday 15 January 2015</td>
+      <tr class="active-deadline">
+	<td>
+	  <a href="https://cerm-glrm2015.abstractcentral.com/"
+	     class="abstract-guidelines" target="_blank">
+	    Abstracts Submission Begins</a></td>
+	<td>Monday 5 January 2015</td>
       </tr>
       <tr>
-	<td>Abstracts Open</td>
-	<td>Monday 5 January 2015</td>
+	<td>Begin Registration</td>
+	<td>Mid January</td>
+	<!-- <td>Thursday 15 January 2015</td> -->
       </tr>
       <tr>
 	<td><a href="/awards.html">Award Nominations</a></td>
@@ -116,6 +125,39 @@ layout: default
 	<td>Wednesday 27 May 2015</td>
       </tr>
     </table>
+
+    <!-- Modal showing the guidelines for submission -->
+    <div id="abstract-guidelines" class="modal fade">
+      <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">How to Submit an Abstract</h4>
+	  </div>
+	  <div class="modal-body">
+	    <p>
+	      To submit an abstract, <b>sign in with your ACS ID</b>
+	      on the following page. <b>If you do not have an ACS
+	      ID</b>, please follow these instructions:
+	    </p>
+	    <ol>
+	      <li>Select "Registering is easy"</li>
+	      <li>Create your ACS ID by providing the required information (marked with an asterisk *)</li>
+	      <li>Return here and log in with your new ACS ID</li>
+	    </ol>
+	  </div>
+	  <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <a href="https://cerm-glrm2015.abstractcentral.com/"
+	       target="_blank" id="abstract-submit" type="button"
+	       class="btn btn-primary">
+	      Continue
+	      <span class="glyphicon glyphicon-arrow-right"></span>
+	    </a>
+	  </div>
+	</div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <a href="/section-list.html" title="List of sections in each region">
       <img src="/images/region-map.png" alt="map of the two regions"
