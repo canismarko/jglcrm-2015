@@ -95,11 +95,23 @@
       <!-- Navbar -->
       <ul class="nav nav-tabs">
 	<li{% if page.url == '/index.html' %} class="active"{% endif %}>
-	  <a href="/">Home</a></li>
-	<li{% if page.url == '/program.html' %} class="active"{% endif %}>
-	  <a href="/program.html">Technical Program</a></li>
-	<li{% if page.url == '/schedule.html' %} class="active"{% endif %}>
-	  <a href="/schedule.html">Schedule</a></li>
+	  <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+	<!-- <li{% if page.url == '/program.html' %} class="active"{% endif %}> -->
+	<!--   <a href="/program.html">Technical Program</a></li> -->
+	<li class="dropdown{% if page.url contains '/program'%} active{% endif %}">
+	  <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+	     role="button" aria-expanded="false">
+	    Program &amp; Schedule <span class="caret"></span></a>
+	  <ul class="dropdown-menu" role="menu">
+	    <li><a href="/program/keynote-speakers.html">
+		Plenary &amp; Keynote Lectures</a></li>
+	    <li class="disabled"><a href="#">Poster Sessions (coming soon)</a></li>
+	    <li><a href="/program/social-events.html">Social Events</a></li>
+	    <li class="disabled"><a href="#">Workshops (coming soon)</a></li>
+	  </ul>
+	</li>
+	<!-- <li{% if page.url == '/schedule.html' %} class="active"{% endif %}> -->
+	<!--   <a href="/schedule.html">Schedule</a></li> -->
 	<li{% if page.url == '/travel.html' %} class="active"{% endif %}>
 	  <a href="/travel.html">Travel/Lodging</a></li>
 	<li{% if page.url == '/expo.html' %} class="active"{% endif %}>
@@ -121,6 +133,7 @@
     <!-- Javascript files -->
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>
