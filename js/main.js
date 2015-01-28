@@ -1,71 +1,121 @@
 "use strict";
+
+// Namespace
+window.jglcrm = {};
+
 $(document).ready(function() {
     // Setup awards progressive reveal
     $('.award-section .award-block').hide();
     $('.award-section').append('<div class="more-button">More info</div>');
     $('.award-section .more-button').on('click', function(e) {
 	$(e.target).slideUp();
-	console.log($(e.target).siblings().find('.award-block'));
 	$(e.target).siblings().find('.award-block').slideDown();
 	$(e.target).siblings('.nominate-button').slideDown();
     });
 });
 
+// Object for holding the countdown to the start of the event
+jglcrm.Countdown = function(then, now) {
+    var seconds, minutes, hours, days, months;
+    // Months
+    months = then.getMonth() - now.getMonth() + 12*(then.getFullYear()-now.getFullYear())
+    // Days
+    days = then.getDate() - now.getDate();
+    // Hours
+    hours = then.getHours() - now.getHours();
+    // Minutes
+    minutes = then.getMinutes() - now.getMinutes();
+    // Seconds
+    seconds = then.getSeconds() - now.getSeconds();
+    // Method to check for negative numbers
+    this.fixNegatives = function() {
+	// Seconds
+	if (seconds < 0) {
+	    // Correct for partial minutes
+	    seconds += 60;
+	    minutes -= 1;
+	}
+	// Minutes
+	if (minutes < 0) {
+	    // Correct for partial minutes
+	    minutes += 60;
+	    hours -= 1;
+	}
+	// Hours
+	if (hours < 0) {
+	    // Correct for partial days
+	    hours += 24;
+	    days -= 1;
+	}
+	// Days
+	if (days < 0) {
+	    // Correct for partial months
+	    if ([3, 5, 8, 10].indexOf(now.getMonth()) > -1) {
+		// Thirty days has September...
+		days += 30;
+	    } else if (now.getMonth == 1) {
+		// February has 28
+		days += 28;
+	    } else {
+		// ...all the rest have 31
+		days += 31;
+	    }
+	    months -= 1;
+	}
+	return true;
+    }
+    this.getSeconds = function() {
+	return seconds;
+    };
+    this.setSeconds = function(newSeconds) {
+	seconds = newSeconds;
+    };
+    this.getMinutes = function() {
+	return minutes;
+    };
+    this.setMinutes = function(newMinutes) {
+	minutes = newMinutes;
+    };
+    this.addMinutes = function(deltaMinutes) {
+	minutes += deltaMinutes;
+    };
+    this.getHours = function() {
+	return hours;
+    };
+    this.setHours = function(newHours) {
+	hours = newHours;
+    };
+    this.getDays = function() {
+	return days;
+    };
+    this.setDays = function(newDays) {
+	days = newDays;
+    };
+    this.getMonths = function() {
+	return months;
+    };
+    this.setMonths = function(newMonths) {
+	months = newMonths;
+    };
+    this.fixNegatives();
+}
+
 // Countdown timer to start of event
 $(document).ready(function() {
     $('.countdown-timer').each(function(idx, elem) {
-	var $timer,thenString, now, then, months, days, hours, minutes, seconds;
+	var $timer,thenString, now, then, months, days, hours, minutes, seconds, countdown;
 	$timer = $(elem);
 	thenString = $timer.data('date')
 	function updateTimer() {
 	    now = new Date();
 	    then = new Date(thenString);
-	    // Months
-	    months = then.getMonth() - now.getMonth() + 12*(then.getFullYear()-now.getFullYear())
-	    // Days
-	    days = then.getDate() - now.getDate();
-	    if (then.getDate() < now.getDate()) {
-		// Correct for partial months
-		console.log(now.getMonth());
-		if ([3, 5, 8, 10].indexOf(now.getMonth()) > -1) {
-		    // Thirty days has September...
-		    days += 30;
-		} else if (now.getMonth == 1) {
-		    // February has 28
-		    days += 28;
-		} else {
-		    // ...all the rest have 31
-		    days += 31;
-		}
-		months -= 1;
-	    }
-	    // Hours
-	    hours = then.getHours() - now.getHours();
-	    if (then.getHours() < now.getHours()) {
-		// Correct for partial days
-		hours += 24;
-		days -= 1;
-	    }
-	    // Minutes
-	    minutes = then.getMinutes() - now.getMinutes();
-	    if (then.getMinutes() < now.getMinutes()) {
-		// Correct for partial minutes
-		minutes += 60;
-		hours -= 1;
-	    }
-	    // Seconds
-	    seconds = then.getSeconds() - now.getSeconds();
-	    if (then.getSeconds() < now.getSeconds()) {
-		// Correct for partial minutes
-		seconds += 60;
-		minutes -= 1;
-	    }
+	    countdown = new jglcrm.Countdown(then, now);
 	    // Update the DOM with the new values
-	    $timer.find('.months').text(months);
-	    $timer.find('.days').text(days);
-	    $timer.find('.hours').text(hours);
-	    $timer.find('.minutes').text(minutes);
-	    $timer.find('.seconds').text(seconds);
+	    $timer.find('.months').text(countdown.getMonths());
+	    $timer.find('.days').text(countdown.getDays());
+	    $timer.find('.hours').text(countdown.getHours());
+	    $timer.find('.minutes').text(countdown.getMinutes());
+	    $timer.find('.seconds').text(countdown.getSeconds());
 	}
 	// Update the timer ever second
 	updateTimer();
