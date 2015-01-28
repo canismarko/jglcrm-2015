@@ -136,6 +136,10 @@ $(document).ready(function() {
 	    {
 		href: 'http://chem.wayne.edu/',
 		src: '/images/wayne-state-logo.png'
+	    },
+	    {
+		href: 'http://www.organicdivision.org/',
+		src: '/images/orgn-logo.png'
 	    }
 	];
 	// Remove non-javascript indicators
