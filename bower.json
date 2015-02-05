@@ -16,7 +16,7 @@
     ],
     "dependencies": {
 	"bootstrap": ">=3.3.2",
-	"less": ">=1.7.0",
+	"less": ">1.7.0",
 	"jasmine": "~2.0"
     }
 }

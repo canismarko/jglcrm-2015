@@ -140,6 +140,10 @@ $(document).ready(function() {
 	    {
 		href: 'http://www.organicdivision.org/',
 		src: '/images/orgn-logo.png'
+	    },
+	    {
+		href: 'http://www.divched.org/',
+		src: '/images/ched-logo.png'
 	    }
 	];
 	// Remove non-javascript indicators
