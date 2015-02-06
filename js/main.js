@@ -161,6 +161,7 @@ $(document).ready(function() {
 // Pop-up with instructions for submitting abstracts
 $(document).ready(function(e) {
     $('.abstract-guidelines').on('click', function(linkEvent) {
+	console.log('hello');
 	var $btn, $modal, url;
 	url = $(linkEvent.target).attr('href');
 	$modal = $('#abstract-guidelines');
