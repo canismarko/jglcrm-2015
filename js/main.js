@@ -144,7 +144,15 @@ $(document).ready(function() {
 	    {
 		href: 'http://www.divched.org/',
 		src: '/images/ched-logo.png'
-	    }
+	    },
+	    {
+		href: 'https://www.cmich.edu/colleges/cst/chemistry/Pages/default.aspx',
+		src: '/images/cmu-logo.png'
+	    },
+	    {
+		href: 'http://www.lsa.umich.edu/chem/',
+		src: '/images/uofm-logo.png'
+	    },
 	];
 	// Remove non-javascript indicators
 	$elem.find('span').hide();
