@@ -105,10 +105,10 @@ $(document).ready(function() {
     $('.countdown-timer').each(function(idx, elem) {
 	var $timer,thenString, now, then, months, days, hours, minutes, seconds, countdown;
 	$timer = $(elem);
-	thenString = $timer.data('date')
+	then = new Date(Date.UTC(2015, 5, 27, 12));
+	console.log(then);
 	function updateTimer() {
 	    now = new Date();
-	    then = new Date(thenString);
 	    countdown = new jglcrm.Countdown(then, now);
 	    // Update the DOM with the new values
 	    $timer.find('.months').text(countdown.getMonths());
