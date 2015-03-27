@@ -105,7 +105,7 @@ $(document).ready(function() {
     $('.countdown-timer').each(function(idx, elem) {
 	var $timer,thenString, now, then, months, days, hours, minutes, seconds, countdown;
 	$timer = $(elem);
-	then = new Date(Date.UTC(2015, 5, 27, 12));
+	then = new Date(Date.UTC(2015, 4, 27, 12));
 	console.log(then);
 	function updateTimer() {
 	    now = new Date();
