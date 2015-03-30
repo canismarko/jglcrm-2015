@@ -153,6 +153,10 @@ $(document).ready(function() {
 		href: 'http://www.lsa.umich.edu/chem/',
 		src: '/images/uofm-logo.png'
 	    },
+	    {
+		href: 'http://wmich.edu/chemistry/',
+		src: '/images/wmu-logo.png'
+	    },
 	];
 	// Remove non-javascript indicators
 	$elem.find('span').hide();
