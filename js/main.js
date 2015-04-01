@@ -4,6 +4,25 @@
 window.jglcrm = {};
 
 $(document).ready(function() {
+    // Activate "invited speakers" popovers
+    var topics = $('.invited-speakers');
+    topics.each(function(index, elem) {
+	// Create the html list from the data-speakers-list attribute
+	var speakerList = $(elem).data('speaker-list').split('/');
+	var speakersHtml = '<ul>';
+	var i;
+	for (i=0; i<speakerList.length; i+=1) {
+	    speakersHtml = speakersHtml + '<li>' + speakerList[i] + '</li>';
+	}
+	// Activate the popovers
+	$(elem).popover({
+	    placement: 'right',
+	    title: 'Invited Speakers',
+	    content: speakersHtml,
+	    trigger: 'focus',
+	    html: true,
+	});
+    });
     // Setup awards progressive reveal
     $('.award-section .award-block').hide();
     $('.award-section').append('<div class="more-button">More info</div>');
