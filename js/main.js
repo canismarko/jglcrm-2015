@@ -176,6 +176,14 @@ $(document).ready(function() {
 		href: 'http://wmich.edu/chemistry/',
 		src: '/images/wmu-logo.png'
 	    },
+	    {
+		href: 'http://chemistry.nd.edu/',
+		src: '/images/und-logo.png'
+	    },
+	    {
+		href: '',
+		src: '/images/schb-logo.png'
+	    },
 	];
 	// Remove non-javascript indicators
 	$elem.find('span').hide();
