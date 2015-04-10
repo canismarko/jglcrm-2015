@@ -181,7 +181,7 @@ $(document).ready(function() {
 		src: '/images/und-logo.png'
 	    },
 	    {
-		href: '',
+		href: 'http://www.acs-schb.org/',
 		src: '/images/schb-logo.png'
 	    },
 	];
