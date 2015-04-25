@@ -184,6 +184,10 @@ $(document).ready(function() {
 		href: 'http://www.acs-schb.org/',
 		src: '/images/schb-logo.png'
 	    },
+	    	    {
+		href: 'http://www.kalexsyn.com/',
+		src: '/images/kalexsyn-logo.png'
+	    },
 	];
 	// Remove non-javascript indicators
 	$elem.find('span').hide();
