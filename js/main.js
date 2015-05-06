@@ -184,9 +184,13 @@ $(document).ready(function() {
 		href: 'http://www.acs-schb.org/',
 		src: '/images/schb-logo.png'
 	    },
-	    	    {
+	    {
 		href: 'http://www.kalexsyn.com/',
 		src: '/images/kalexsyn-logo.png'
+	    },
+	    {
+		href: 'http://acsenvr.com/',
+		src: '/images/envr-logo.png'
 	    },
 	];
 	// Remove non-javascript indicators
