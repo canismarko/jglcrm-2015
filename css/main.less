@@ -112,6 +112,10 @@ body > .container {
     }
 }
 
+ul.list-of-schedules {
+    list-style-type: none;
+}
+
 .abstract-guidelines
 {
     margin-bottom: 10px;
@@ -175,6 +179,90 @@ body > .container {
 
 .active-deadline {
     font-weight: bold;
+}
+
+/* Schedule at-a-glance tables */
+table.schedule {
+    @border-color: rgb(228, 228, 228);
+    .standard-border {
+	border: 1px dotted @border-color;
+    }
+    text-align: center;
+    background: white;
+    border: 2px solid @border-color;
+    td {
+	.standard-border;
+	width: 43px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+    }
+    td[colspan] {
+	/* Actual event cell */
+	border: 1px solid @border-color;
+    }
+    .gallery-ab, .gallery-cd, .gallery-ef, .gallery-gh,
+    .monroe-a, .monroe-b, .monroe-c, .monroe-d,
+    .river-a, .river-b, .river-c, .river-d, .river-e, .river-f,
+    .boardroom, .river-lobby, .hotel {
+	td:first-child {
+	    font-weight: bold;
+	    width: 120px;
+	    padding-left: 3px;
+	    padding-right: 3px;
+	}
+    }
+    tr.times {
+	font-weight: bold;
+	td[colspan] {.standard-border;}
+    }
+    tr:not(.times):hover {
+	background: #f5f5f5;
+    }
+    /* Time slots with no events scheduled anywhere */
+    td.no-events {
+	background-color: @border-color;
+	border-style: none;
+    }
+    /* Color coding for event rooms */
+    .room-background(@red, @green, @blue) {
+	td[colspan]:not(.no-events) {
+	    background-color: rgb(@red, @green, @blue);
+	}
+    }
+    .room-border(@red, @green, @blue) {
+	td[colspan]:not(.no-events) {
+	    border-color: rgb(@red, @green, @blue);
+	}
+    }
+    .room-color(@red, @green, @blue) {
+	td[colspan]:not(.no-events) {
+	    color: rgb(@red, @green, @blue);
+	}
+	td:first-child {
+	    color: rgb(@red, @green, @blue);
+	}
+    }
+    .gallery-ab, .gallery-gh,
+    .monroe-c,
+    .river-b, .river-e, .hotel {
+    	.room-color(49, 112, 143);
+	.room-border(188, 232, 241);
+	.room-background(217, 237, 247);
+    }
+    .gallery-cd,
+    .monroe-a, .monroe-d,
+    .river-c, .river-f {
+    	.room-color(60, 118, 61);
+	.room-border(214, 233, 198);
+	.room-background(223, 240, 216);
+    }
+    .gallery-ef,
+    .monroe-b,
+    .river-a, .river-d, .river-lobby {
+    	.room-color(138, 109, 59);
+	.room-border(250, 235, 204);
+	.room-background(252, 248, 227);
+    }
 }
 
 /* Countdown timer to the start of the conference */
