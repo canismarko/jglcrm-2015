@@ -192,6 +192,10 @@ $(document).ready(function() {
 		href: 'http://acsenvr.com/',
 		src: '/images/envr-logo.png'
 	    },
+	    	    {
+		href: 'http://www.chatham.edu/academics/programs/undergraduate/chemistry/',
+		src: '/images/chantham-logo.png'
+		    },
 	];
 	// Remove non-javascript indicators
 	$elem.find('span').hide();
