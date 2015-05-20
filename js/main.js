@@ -192,10 +192,34 @@ $(document).ready(function() {
 		href: 'http://acsenvr.com/',
 		src: '/images/envr-logo.png'
 	    },
-	    	    {
-		href: 'http://www.chatham.edu/academics/programs/undergraduate/chemistry/',
-		src: '/images/chantham-logo.png'
-		    },
+	    {
+		href: 'http://www.aerotek.com/scientific/',
+		src: '/images/logos/aerotek.png'
+	    },
+	    {
+		href: 'http://www.fishersci.com/ecomm/servlet/cmstatic',
+		src: '/images/logos/fischer.png'
+	    },
+	    {
+		href: 'http://www.jascoinc.com/',
+		src: '/images/logos/jasco.png'
+	    },
+	    {
+		href: 'http://www.pasco.com/',
+		src: '/images/logos/pasco.png'
+	    },
+	    {
+		href: 'http://rhk-tech.com/',
+		src: '/images/logos/rhk.png'
+	    },
+	    {
+		href: 'http://www.sigmaaldrich.com/united-states.html',
+		src: '/images/logos/sigma-aldrich.png'
+	    },
+	    {
+		href: 'http://chem.uiowa.edu/',
+		src: '/images/logos/iowa.png'
+	    },
 	];
 	// Remove non-javascript indicators
 	$elem.find('span').hide();
