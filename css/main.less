@@ -205,16 +205,11 @@ table.schedule {
 	/* Actual event cell */
 	border: 1px solid @border-color;
     }
-    .gallery-ab, .gallery-cd, .gallery-ef, .gallery-gh,
-    .monroe-a, .monroe-b, .monroe-c, .monroe-d,
-    .river-a, .river-b, .river-c, .river-d, .river-e, .river-f,
-    .boardroom, .river-lobby, .hotel {
-	td:first-child {
-	    font-weight: bold;
-	    width: 120px;
-	    padding-left: 3px;
-	    padding-right: 3px;
-	}
+    td.room {
+	font-weight: bold;
+    	width: 120px;
+    	padding-left: 3px;
+    	padding-right: 3px;
     }
     tr.times {
 	font-weight: bold;
@@ -227,6 +222,8 @@ table.schedule {
     td.no-events {
 	background-color: @border-color;
 	border-style: none;
+	color: black !important;
+	font-weight: normal !important;
     }
     /* Color coding for event rooms */
     .room-background(@red, @green, @blue) {
